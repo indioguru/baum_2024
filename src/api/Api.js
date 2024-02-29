@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const URL_STRAPI = "http://localhost:1337";
+// const URL_STRAPI = "http://localhost:1337";
+const URL_STRAPI = "https://baum-2024-be1e7766ad39.herokuapp.com";
 
 export const getInfoHome = async () => {
   try {
