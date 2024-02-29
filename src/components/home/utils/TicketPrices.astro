@@ -1,0 +1,18 @@
+---
+const { title, prices } = Astro.props;
+---
+
+<div class="lg:w-[70%] m-auto">
+  <h3 class="title_two mt-[70px] lg:mt-[150px] ">{title}</h3>
+
+  <div class="mt-[17px] lg:grid lg:grid-cols-2 lg:gap-x-[25px] ">
+    {
+      prices.map((item) => (
+        <div class="text-white border py-[7px] px-[14px] ">
+          <p class="text-[14px] pp-bold lg:text-[20px]">{item.Etapa}</p>
+          <p class="text-[13px] pp-light lg:text-[20px]">{item.Precio}</p>
+        </div>
+      ))
+    }
+  </div>
+</div>

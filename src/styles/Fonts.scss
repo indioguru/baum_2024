@@ -1,0 +1,41 @@
+.paragraph {
+  @media (min-width: 1024px) {
+    font-size: 20px;
+  }
+}
+
+.title {
+  color: $white;
+  font-size: 52px;
+  font-family: pp-book;
+
+  @media (min-width: 1024px) {
+    font-size: 70px;
+  }
+}
+
+.title_two {
+  color: $white;
+  font-size: 24px;
+  font-family: pp-light;
+
+  @media (min-width: 1024px) {
+    font-size: 40px;
+  }
+}
+
+.sharp {
+  font-family: sharp;
+}
+
+.pp-bold {
+  font-family: pp-bold;
+}
+
+.pp-book {
+  font-family: pp-book;
+}
+
+.pp-light {
+  font-family: pp-light;
+}

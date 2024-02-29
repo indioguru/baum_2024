@@ -1,0 +1,31 @@
+---
+import SvgFigureOrange from "../../svgs/SvgFigureOrange.astro";
+
+const { data } = Astro.props;
+---
+
+<section id="Cashless" class="relative">
+  <div class="container_all">
+    <h2 class="pt-[100px] title">Alcancías</h2>
+
+    <div class="border w-full opacity-70"></div>
+
+    <p class="mt-[65px] text-white text-[14px] pp-light lg:text-[22px] lg:w-[80%]">
+      {data}
+    </p>
+
+    <div class="button_two text-end mt-[42px] pb-[100px]">
+      <button>ALCANCÍAS</button>
+    </div>
+  </div>
+
+  <div class="lg:flex lg:items-center lg:justify-center">
+    <div class="w-[100%] xl:max-w-[700px]">
+      <SvgFigureOrange />
+    </div>
+
+    <div class="hidden lg:block w-[100%] xl:max-w-[700px]">
+      <SvgFigureOrange />
+    </div>
+  </div>
+</section>

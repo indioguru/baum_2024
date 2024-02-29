@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Homebanner from "../components/home/Homebanner.astro";
+import HomeLineup from "../components/home/HomeLineup.astro";
+import HomeEntries from "../components/home/HomeEntries.astro";
+import HomePiggyBank from "../components/home/HomePiggyBank.astro";
+import HomeGallery from "../components/home/HomeGallery.astro";
+import Footer from "../components/footer/Footer.astro";
+import Navbar from "../components/navbar/Navbar";
+
+import "animate.css";
+
+import "../styles/Index.scss";
+import { getInfoHome } from "../api/Api";
+
+const { data } = await getInfoHome();
+---
+
+<Layout title="Welcome to Astro.">
+  <main class="relative z-10 bg-cover bg-no-repeat bg-center bg-fixed overflow-hidden main-background">
+    <Navbar client:idle />
+    <Homebanner data={data} />
+    <HomeLineup data={data} />
+    <HomeEntries data={data?.Entradas} />
+    <HomePiggyBank data={data?.Descripcion_alcancias} />
+    <HomeGallery data={data?.Galeria} />
+    <Footer data={data} />
+    <div class="button_one lg:max-w-[400px] fixed bottom-[20px] w-[90%] right-1/2 translate-x-1/2 z-20">
+      <button class="w-full text-[24px]">ENTRADAS</button>
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,43 @@
+$white: #f7f6f7;
+$black: #3d3d3b;
+$red: #e8501d;
+$purple: #9d1d80;
+$green: #19a538;
+$green-two: #dcdd26;
+
+@import "./Buttons.scss";
+@import "./Base.scss";
+@import "./Fonts.scss";
+@import "./Gallery.scss";
+
+@font-face {
+  font-family: "sharp";
+  src: url("/assets/fonts/SharpGroteskMediumItalic20-Regular/SharpGroteskMediumItalic20-Regular.otf") format("opentype"),
+    url("/assets/fonts/SharpGroteskMediumItalic20-Regular/SharpGroteskMediumItalic20-Regular.woff") format("woff"),
+    url("/assets/fonts/SharpGroteskMediumItalic20-Regular/SharpGroteskMediumItalic20-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "pp-bold";
+  src: url("/assets/fonts/PPNeueMontreal-Bold/PPNeueMontreal-Bold.otf") format("opentype"),
+    url("/assets/fonts/PPNeueMontreal-Bold/PPNeueMontreal-Bold.woff") format("woff"),
+    url("/assets/fonts/PPNeueMontreal-Bold/PPNeueMontreal-Bold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "pp-book";
+  src: url("/assets/fonts/PPNeueMontreal-Book/PPNeueMontreal-Book.otf") format("opentype"),
+    url("/assets/fonts/PPNeueMontreal-Book/PPNeueMontreal-Book.woff") format("woff"),
+    url("/assets/fonts/PPNeueMontreal-Book/PPNeueMontreal-Book.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "pp-light";
+  src: url("/assets/fonts/PPNeueMontreal-Light/PPNeueMontreal-Light.otf") format("opentype"),
+    url("/assets/fonts/PPNeueMontreal-Light/PPNeueMontreal-Light.woff") format("woff"),
+    url("/assets/fonts/PPNeueMontreal-Light/PPNeueMontreal-Light.woff2") format("woff2");
+  font-display: swap;
+}

@@ -1,0 +1,100 @@
+* {
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.scroll {
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.container_all {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.block {
+  color: $black;
+  background-color: $white;
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 16px;
+  font-family: sharp;
+}
+
+.border {
+  border: 1px $white solid;
+}
+
+.border-t {
+  border-top: 1px $white solid;
+}
+
+.border-red {
+  border: 1px $red solid;
+}
+
+.main-background {
+  background-image: url("./assets/bg_clouds.png");
+}
+@media (min-width: 1024px) {
+  .main-background {
+    background-image: url("./assets/bg_clouds_destock.png");
+  }
+}
+
+.bg_menu {
+  background-image: url("/assets/bg_menu.png");
+
+  @media(min-width:1024px){
+    background-image: url("./assets/bg_menu_desktop.png");
+  }
+}
+
+.menu-toggle {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.svg_close:hover {
+  fill: $green-two;
+}
+
+.svg_close:hover .svg_close_x {
+  stroke: $black;
+}
+
+.svg-anim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: show-hide 2s infinite step-start;
+}
+
+@keyframes show-hide {
+  0%,
+  50% {
+    opacity: 0;
+  }
+  50.001%,
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate__animated.animate__slideInRight {
+  --animate-duration: 0.5s;
+}
+
+.animate__animated.animate__slideOutRight {
+  --animate-duration: 0.5s;
+}
+
+.animate__animated.animate__slideOutLeft {
+  --animate-duration: 0.5s;
+}

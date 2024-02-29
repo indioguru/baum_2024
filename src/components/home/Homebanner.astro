@@ -1,0 +1,43 @@
+---
+import SvgFigurePink from "../../svgs/SvgFigurePink.astro";
+import ArtistInfo from "../common/ArtistInfo";
+import NavbarOpen from "../navbar/utils/NavbarOpen";
+
+const { data } = Astro.props;
+---
+
+<section id="Home" class="min-h-screen w-full">
+  <div class="container_all">
+    <div class="flex justify-between items-start pt-[70px]">
+      <div class="text-white">
+        <h1 class="text-[60px] leading-[60px] pp-book lg:text-[80px] lg:leading-[80px]">Baum <br /> Festival</h1>
+        <h3 class="mt-[20px] pp-light text-[20px] w-[60%] lg:text-[30px]">{data?.Fecha_banner}</h3>
+        <h3 class="pp-light text-[50px] mt-[20px] lg:text-[70px]">2024</h3>
+      </div>
+    </div>
+
+    <div class="fixed w-[100%] flex justify-end right-1/2 translate-x-1/2 max-w-[1200px] top-[70px] z-20">
+      <div class="w-[50px] lg:w-[70px]  mr-[20px] lg:mr-0 cursor-pointer">
+        <NavbarOpen client:load />
+      </div>
+    </div>
+
+    <div class="absolute right-0 top-[280px] w-[60%] max-w-[600px] lg:top-[430px] lg:w-[70%]">
+      <SvgFigurePink />
+    </div>
+
+    <div class="lg:translate-y-[-170px]">
+      <div class="button_one text-end mt-[160px] lg:mt-0">
+        <button class="mr-auto text-[18px] lg:text-[24px]"> COMPRAS INTERNACIONALES</button>
+      </div>
+
+      <div class="button_two text-end mt-[21px]">
+        <button>ALCANCÍAS</button>
+      </div>
+    </div>
+
+    <div class="mt-[105px] lg:w-[70%]">
+      <ArtistInfo client:load data={data?.Artistas_principales} />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+---
+import SvgFigureBlack from "../../svgs/SvgFigureBlack.astro";
+import ArtistInfo from "../../components/common/ArtistInfo.jsx";
+
+const { data } = Astro.props;
+---
+
+<section id="Lineup" class="relative">
+  <div class="container_all">
+    <h2 class="title pt-[87px]">Lineup</h2>
+
+    <div class="border-t w-full opacity-70"></div>
+
+    <ArtistInfo client:load data={data?.Artistas} />
+
+    <div class="button_two mt-[22px] pb-[200px] lg:pb-[400px]">
+      <button>MÁS ARTISTAS POR CONFIRMAR</button>
+    </div>
+  </div>
+
+  <div class="absolute bottom-0 translate-y-1/2 z-10 w-[100%] lg:w-[50%] 2xl:max-w-[700px] 2xl:right-1/2">
+    <SvgFigureBlack />
+  </div>
+  <div class="hidden absolute bottom-0 translate-y-1/2 z-10 right-0 w-[100%] lg:block lg:w-[52%] 2xl:max-w-[700px] 2xl:left-1/2">
+    <SvgFigureBlack />
+  </div>
+</section>

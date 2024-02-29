@@ -1,0 +1,28 @@
+---
+import FooterImageResponsive from "../footer/utils/FooterImageResponsive";
+import SvgFigureWhite from "../../svgs/SvgFigureWhite.astro";
+
+const { data } = Astro.props;
+---
+
+<footer class="bg-black">
+  <div class="container_all">
+    <div class="w-[100%] translate-x-[-20px] m-auto">
+      <SvgFigureWhite />
+    </div>
+
+    <FooterImageResponsive client:only data={data} />
+
+    <div class="border-t w-full mt-[40px] opacity-70"></div>
+
+    <div class="lg:flex lg:justify-between lg:mt-[27px]">
+      <p class="text-center text-white pp-light text-[12px] mt-[35px] lg:text-[16px] lg:mt-0">Informacion y pqr's : {data?.Correo_footer}</p>
+
+      <a class="text-center flex justify-center text-white pp-light text-[12px] underline lg:text-[16px] my-2 lg:my-0" href="#">Términos y condiciones</a>
+
+      <a class="text-center text-white pp-light flex justify-center text-[12px] underline lg:text-[16px] my-2 lg:my-0" href="#">Politica de privacidad</a>
+    </div>
+
+    <p class="text-center text-white pp-bold pb-[87px] mt-[27px] lg:text-[16px] lg:mt-[40px]">BAUM FESTIVAL (2024) (R)</p>
+  </div>
+</footer>
