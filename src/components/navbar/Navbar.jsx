@@ -12,12 +12,12 @@ const Navbar = () => {
       className="bg_menu fixed bg-no-repeat bg-center bg-fixed bg-cover w-full min-h-[100vh] z-50 top-0 menu-toggle animate__animated"
     >
       <div className="container_all pt-[70px]">
-        <div className="w-[50px] ml-auto cursor-pointer">
+        <div className="w-[50px] lg:w-[60px] ml-auto cursor-pointer">
           <NavbarClose />
         </div>
 
         {fields.map((item, key) => (
-          <div key={key}>
+          <div className="group" key={key}>
             <p
               onClick={() => {
                 const menu = document.getElementById("menu");
@@ -28,15 +28,15 @@ const Navbar = () => {
                 }, 500);
                 scrollToId(item?.name);
               }}
-              className=" uppercase text-[32px] pp-light text-white hover:text-green hover:scale-105 transition-transform duration-300 cursor-pointer"
+              className=" uppercase text-[32px] pp-light text-white group-hover:text-green group-hover:scale-105 transition-transform duration-300 cursor-pointer"
             >
               {item.name}
             </p>
-            <div className="w-[105%] border-t opacity-50 lg:w-[150%]" />
+            <div className="w-[105%] border-t opacity-50 lg:w-[150%]  group-hover:w-[40%] transition-all duration-500" />
           </div>
         ))}
 
-        <div className="w-[130px] absolute bottom-[80px] lg:bottom-[180px] lg:w-[200px]">
+        <div className="w-[130px] absolute bottom-[80px] lg:bottom-[180px] lg:w-[150px]">
           <SvgBaum />
         </div>
 
