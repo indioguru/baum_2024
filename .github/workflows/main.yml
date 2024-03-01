@@ -1,4 +1,4 @@
-name: Deploy to FTP Server
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -11,27 +11,36 @@ permissions:
   contents: read
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '14' # Asegúrate de usar la versión de Node.js que sea compatible con tu proyecto
-
-      - name: Install dependencies and build your site
+      # Opcional: Paso para verificar la conectividad con el servidor FTP antes del despliegue
+      - name: Verify FTP Server Connectivity
         run: |
-          npm install
-          npm run build
-        # Este paso asume que tienes un script 'build' en tu package.json que genera tu sitio en un directorio 'dist'
+          apt-get update && apt-get install -y ftp
+          ftp -inv ${{ secrets.FTP_SERVER }} <<EOF
+          user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}
+          bye
+          EOF
+        continue-on-error: true # Continúa incluso si este paso falla
 
-      - name: Deploy to FTP Server
+      - name: Install, build, and upload your site output
+        id: deploy
         uses: radenpioneer/astro-ftp-deploy@v0.1.0
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/ # Asegúrate de especificar el directorio correcto que contiene tu sitio construido
+
+      # Opcional: Paso de reintento en caso de fallo
+      - name: Retry FTP Deploy if Failed
+        if: failure() && steps.deploy.outcome == 'failure'
+        uses: radenpioneer/astro-ftp-deploy@v0.1.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+        # Puedes ajustar el número de intentos o agregar una espera entre intentos si es necesario
