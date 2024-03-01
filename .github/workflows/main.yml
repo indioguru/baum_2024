@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to FTP Server
 
 on:
   push:
@@ -11,15 +11,27 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
 
-      - name: Install, build, and upload your site output
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14' # Asegúrate de usar la versión de Node.js que sea compatible con tu proyecto
+
+      - name: Install dependencies and build your site
+        run: |
+          npm install
+          npm run build
+        # Este paso asume que tienes un script 'build' en tu package.json que genera tu sitio en un directorio 'dist'
+
+      - name: Deploy to FTP Server
         uses: radenpioneer/astro-ftp-deploy@v0.1.0
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/ # Asegúrate de especificar el directorio correcto que contiene tu sitio construido
