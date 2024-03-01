@@ -17,6 +17,9 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
 
+  <link rel="preload" href="../assets/bg_clouds.png" as="image" />
+  <link rel="preload" href="../assets/bg_clouds_destock.png" as="image" />
+
   <body>
     <slot />
   </body>
