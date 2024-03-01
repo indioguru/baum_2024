@@ -48,10 +48,10 @@
 }
 
 .bg_menu {
-  background-image: url("./assets/bg_menu.png");
+  background-image: url("../assets/bg_menu.png");
 
   @media(min-width:1024px){
-    background-image: url("./assets/bg_menu_desktop.png");
+    background-image: url("../assets/bg_menu_desktop.png");
   }
 }
 
