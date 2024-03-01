@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   repository_dispatch:
-    types: [strapi-update] 
+    types: [strapi-update]
   workflow_dispatch:
 
 permissions:
@@ -17,30 +17,9 @@ jobs:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
 
-      # Opcional: Paso para verificar la conectividad con el servidor FTP antes del despliegue
-      - name: Verify FTP Server Connectivity
-        run: |
-          apt-get update && apt-get install -y ftp
-          ftp -inv ${{ secrets.FTP_SERVER }} <<EOF
-          user ${{ secrets.FTP_USERNAME }} ${{ secrets.FTP_PASSWORD }}
-          bye
-          EOF
-        continue-on-error: true # Continúa incluso si este paso falla
-
       - name: Install, build, and upload your site output
-        id: deploy
         uses: radenpioneer/astro-ftp-deploy@v0.1.0
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-
-      # Opcional: Paso de reintento en caso de fallo
-      - name: Retry FTP Deploy if Failed
-        if: failure() && steps.deploy.outcome == 'failure'
-        uses: radenpioneer/astro-ftp-deploy@v0.1.0
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-        # Puedes ajustar el número de intentos o agregar una espera entre intentos si es necesario
+          server: ${{secrets.FTP_SERVER}}
+          username: ${{secrets.FTP_USERNAME}}
+          password: ${{secrets.FTP_PASSWORD}}
