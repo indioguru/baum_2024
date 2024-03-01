@@ -50,8 +50,14 @@
 .bg_menu {
   background-image: url("../assets/bg_menu.png");
 
-  @media(min-width:1024px){
+  @media (min-width: 1024px) {
     background-image: url("../assets/bg_menu_desktop.png");
+  }
+}
+
+.responsive_navbar {
+  @media (min-width: 1024px) and (max-height: 737px) {
+    margin-top: 400px;
   }
 }
 

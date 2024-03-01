@@ -2,7 +2,7 @@
 
 const SvgDoble = () => {
   return (
-    <div class="relative">
+    <div className="relative">
       <svg viewBox="0 0 1442 564" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1441.71 452.857H1415.95V472.978H1441.71V452.857Z" fill="#FFFCEA"></path>
         <path d="M1441.24 473.289H1416.7V497.379H1441.24V473.289Z" fill="#19A538"></path>

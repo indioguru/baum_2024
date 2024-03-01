@@ -36,11 +36,13 @@ const Navbar = () => {
           </div>
         ))}
 
-        <div className="w-[130px] absolute bottom-[80px] lg:bottom-[180px] lg:w-[150px]">
-          <SvgBaum />
+        <div className="responsive_navbar">
+          <div className="w-[130px] absolute bottom-[80px] lg:bottom-[180px] lg:w-[150px]">
+            <SvgBaum />
+          </div>
         </div>
 
-        <div className="absolute bottom-0 w-[100%] left-0 br-red  flex justify-center">
+        <div className="absolute bottom-0 w-[100%] left-0 br-red flex justify-center">
           <div className="w-[100%] max-w-[1000px]">
             <SvgDoble />
           </div>
