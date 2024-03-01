@@ -19,7 +19,7 @@ const { data } = await getInfoHome();
 
 <Layout title="Welcome to Astro.">
   <main class="relative z-10 bg-cover bg-no-repeat bg-center bg-fixed overflow-hidden main-background">
-    <!-- <Navbar client:idle /> -->
+    <Navbar client:idle />
     <Homebanner data={data} />
     <HomeLineup data={data} />
     <HomeEntries data={data?.Entradas} />
