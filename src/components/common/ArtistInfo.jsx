@@ -51,7 +51,7 @@ const ArtistInfo = ({ data }) => {
           <p
             onClick={() => openModal(key)}
             key={`item_${key}`}
-            className="block hover:bg-black hover:text-green_two cursor-pointer transition-colors duration-300 paragraph "
+            className={`block hover:bg-black hover:text-green_two cursor-pointer transition-colors duration-300 paragraph artista_detalle artista_{${item.Nombre}} `}
           >
             {item?.Nombre}
           </p>

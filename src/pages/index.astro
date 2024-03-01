@@ -17,7 +17,7 @@ import { getInfoHome } from "../api/Api";
 const { data } = await getInfoHome();
 ---
 
-<Layout title="Baum | 2024">
+<Layout title="BAUM Festival | Corferias Bogotá - 24 y 25 de mayo 2024">
   <main class="relative z-10 bg-cover bg-no-repeat bg-center bg-fixed overflow-hidden main-background">
     <Navbar client:idle />
     <Homebanner data={data} />
@@ -27,7 +27,7 @@ const { data } = await getInfoHome();
     <HomeGallery data={data?.Galeria} />
     <Footer data={data} />
     <div class="button_one lg:max-w-[400px] fixed bottom-[20px] w-[90%] right-1/2 translate-x-1/2 z-20">
-      <button class="w-full text-[24px]">ENTRADAS</button>
+      <button class="w-full entradas entradas_naranja text-[24px]">ENTRADAS</button>
     </div>
   </main>
 </Layout>
