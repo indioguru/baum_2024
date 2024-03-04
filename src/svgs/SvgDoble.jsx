@@ -532,7 +532,7 @@ const SvgDoble = () => {
         <path d="M1046.28 225.376V196.634H1034.77V225.376H1046.28Z" fill="#FFFCE8"></path>
       </svg>
 
-      <svg class="svg-anim" viewBox="0 0 1442 565" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg className="svg-anim" viewBox="0 0 1442 565" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1441.71 453.546H1415.95V473.667H1441.71V453.546Z" fill="#FFFCEA"></path>
         <path d="M1441.24 473.978H1416.7V498.069H1441.24V473.978Z" fill="#19A538"></path>
         <path d="M1441.24 497.776H1416.7V521.866H1441.24V497.776Z" fill="#FFFCEA"></path>

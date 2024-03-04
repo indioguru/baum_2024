@@ -7,23 +7,24 @@ import HomeEntries from "../components/home/HomeEntries.astro";
 import HomePiggyBank from "../components/home/HomePiggyBank.astro";
 import HomeGallery from "../components/home/HomeGallery.astro";
 import Footer from "../components/footer/Footer.astro";
-import Navbar from "../components/navbar/Navbar";
+
+import HomeVenues from "../components/venuesHome/VenuesHome.astro";
 
 import "animate.css";
 
-import "../styles/Index.scss";
-import { getInfoHome } from "../api/Api";
+import { getInfoHome, getInfoVenuesThree } from "../api/Api";
 
 const { data } = await getInfoHome();
+const { data: data_venues } = await getInfoVenuesThree();
 ---
 
 <Layout title="BAUM Festival | Corferias Bogotá - 24 y 25 de mayo 2024">
   <main class="relative z-10 bg-cover bg-no-repeat bg-center bg-fixed overflow-hidden main-background">
-    <Navbar client:idle />
     <Homebanner data={data} />
     <HomeLineup data={data} />
     <HomeEntries data={data?.Entradas} />
     <HomePiggyBank data={data?.Descripcion_alcancias} />
+    <HomeVenues data={data_venues} />
     <HomeGallery data={data?.Galeria} />
     <Footer data={data} />
     <div class="button_one lg:max-w-[400px] fixed bottom-[20px] w-[90%] right-1/2 translate-x-1/2 z-20">

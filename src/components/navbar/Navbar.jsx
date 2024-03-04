@@ -3,9 +3,12 @@ import NavbarClose from "./utils/NavbarClose";
 import SvgDoble from "../../svgs/SvgDoble";
 import useScrollToId from "../../hooks/useScrollToId";
 
-const Navbar = () => {
+import { navigate } from "astro:transitions/client";
+
+const Navbar = ({ rute }) => {
   const scrollToId = useScrollToId();
   const fields = [{ name: "Home" }, { name: "Lineup" }, { name: "Entradas" }, { name: "Cashless" }, { name: "Galerías" }, { name: "FAQS" }];
+
   return (
     <navbar
       id="menu"
@@ -21,12 +24,18 @@ const Navbar = () => {
             <p
               onClick={() => {
                 const menu = document.getElementById("menu");
-                menu.classList.add("animate__slideOutLeft");
-                setTimeout(() => {
-                  menu.classList.toggle("menu-toggle");
-                  menu.classList.remove("animate__slideInLeft");
-                }, 500);
-                scrollToId(item?.name);
+
+                if (rute !== "/") {
+                  navigate("/");
+                  console.log("se ejecuto");
+                } else {
+                  menu.classList.add("animate__slideOutLeft");
+                  setTimeout(() => {
+                    menu.classList.toggle("menu-toggle");
+                    menu.classList.remove("animate__slideInLeft");
+                  }, 500);
+                  scrollToId(item?.name);
+                }
               }}
               className=" uppercase text-[32px] pp-light text-white group-hover:text-green group-hover:scale-105 transition-transform duration-300 cursor-pointer"
             >

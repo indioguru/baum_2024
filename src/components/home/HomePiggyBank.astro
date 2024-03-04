@@ -1,6 +1,4 @@
 ---
-import SvgFigureOrange from "../../svgs/SvgFigureOrange.astro";
-
 const { data } = Astro.props;
 ---
 
@@ -14,18 +12,8 @@ const { data } = Astro.props;
       {data}
     </p>
 
-    <div class="button_two text-end mt-[42px] pb-[100px]">
+    <div class="button_two text-end mt-[42px] pb-[100px] lg:pb-[50px]">
       <button class="entradas entradas_alcancias2">ALCANCÍAS</button>
-    </div>
-  </div>
-
-  <div class="lg:flex lg:items-center lg:justify-center">
-    <div class="w-[100%] ">
-      <SvgFigureOrange />
-    </div>
-
-    <div class="hidden lg:block w-[100%] ">
-      <SvgFigureOrange />
     </div>
   </div>
 </section>

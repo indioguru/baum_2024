@@ -29,8 +29,25 @@
     }
   }
 
+  a {
+    color: $green-two;
+    background-color: transparent;
+    font-size: 20px;
+    text-decoration: underline;
+    font-family: sharp;
+    transition: color 0.5s;
+
+    @media (min-width: 1024px) {
+      font-size: 24px;
+    }
+  }
+
   @media (hover: hover) {
     button:hover {
+      color: $white;
+    }
+
+    a:hover {
       color: $white;
     }
   }
