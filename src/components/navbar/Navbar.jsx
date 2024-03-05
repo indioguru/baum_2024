@@ -25,8 +25,8 @@ const Navbar = ({ rute }) => {
               onClick={() => {
                 const menu = document.getElementById("menu");
 
-                if (rute !== "/") {
-                  navigate("/");
+                if (rute !== "/baum2024/public_html") {
+                  navigate("/baum2024/public_html");
                   menu.classList.add("animate__slideOutLeft");
 
                   setTimeout(() => {
