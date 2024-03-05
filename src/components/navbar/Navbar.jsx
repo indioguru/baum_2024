@@ -27,7 +27,13 @@ const Navbar = ({ rute }) => {
 
                 if (rute !== "/") {
                   navigate("/");
-                  console.log("se ejecuto");
+                  menu.classList.add("animate__slideOutLeft");
+
+                  setTimeout(() => {
+                    menu.classList.toggle("menu-toggle");
+                    menu.classList.remove("animate__slideInLeft");
+                    scrollToId(item?.name);
+                  }, 1000);
                 } else {
                   menu.classList.add("animate__slideOutLeft");
                   setTimeout(() => {
