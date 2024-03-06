@@ -17,7 +17,7 @@ const { data } = Astro.props;
     </div>
 
     <div class="fixed w-[100%] flex justify-end right-1/2 translate-x-1/2 max-w-[1200px] top-[70px] z-20">
-      <div class="w-[50px] lg:w-[70px]  mr-[20px] lg:mr-0 cursor-pointer">
+      <div class="w-[50px] lg:w-[70px] mr-[20px] lg:mr-0 cursor-pointer">
         <NavbarOpen client:idle />
       </div>
     </div>
@@ -37,7 +37,7 @@ const { data } = Astro.props;
     </div>
 
     <div class="mt-[105px] lg:w-[70%]">
-      <ArtistInfo client:load data={data?.Artistas_principales} />
+      <ArtistInfo client:load data={data?.Artistas_principales} banner={true} />
     </div>
   </div>
 </section>

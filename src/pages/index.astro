@@ -6,6 +6,8 @@ import HomeLineup from "../components/home/HomeLineup.astro";
 import HomeEntries from "../components/home/HomeEntries.astro";
 import HomePiggyBank from "../components/home/HomePiggyBank.astro";
 import HomeGallery from "../components/home/HomeGallery.astro";
+import HomeCashless from "../components/home/HomeCashless.astro";
+import HomeFqs from "../components/home/HomeFqs.astro";
 import Footer from "../components/footer/Footer.astro";
 
 import HomeVenues from "../components/venuesHome/VenuesHome.astro";
@@ -27,6 +29,8 @@ const { data: data_venues } = await getInfoVenuesThree();
     <HomePiggyBank data={data?.Descripcion_alcancias} />
     <HomeVenues data={data_venues} />
     <HomeGallery data={data?.Galeria} />
+    <HomeCashless {data} />
+    <HomeFqs data={data} />
     <Footer data={data} />
     <div class="button_one lg:max-w-[400px] fixed bottom-[20px] w-[90%] right-1/2 translate-x-1/2 z-20">
       <button class="w-full entradas entradas_naranja text-[24px]">ENTRADAS</button>

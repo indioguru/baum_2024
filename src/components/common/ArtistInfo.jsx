@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ModalArtist from "../home/utils/ModalArtist";
 
-const ArtistInfo = ({ data }) => {
+const ArtistInfo = ({ data, banner = false }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [indexArtist, setIndexArtist] = useState(-1);
 
@@ -51,11 +51,17 @@ const ArtistInfo = ({ data }) => {
           <p
             onClick={() => openModal(key)}
             key={`item_${key}`}
-            className={`block  hover:bg-black hover:text-green_two cursor-pointer transition-colors inline-block duration-300 paragraph artista_detalle artista_{${item.Nombre}} `}
+            className={`block  hover:bg-black hover:text-green_two cursor-pointer transition-colors inline-block duration-300 paragraph artista_detalle artista_{${transformString(
+              item.Nombre
+            )}} `}
           >
             {item?.Nombre}
           </p>
         ))}
+
+        {banner && (
+          <p className="block  hover:bg-black hover:text-green_two cursor-pointer transition-colors inline-block duration-300 paragraph">...</p>
+        )}
       </div>
       <div className="overflow-auto">
         {isModalOpen && <ModalArtist anim={anim} artista={data[indexArtist]} onClose={closeModal} onPrev={prevArtist} onNext={nextArtist} />}
@@ -63,5 +69,9 @@ const ArtistInfo = ({ data }) => {
     </div>
   );
 };
+
+function transformString(inputString) {
+  return inputString.toLowerCase().replace(/ /g, "_");
+}
 
 export default ArtistInfo;

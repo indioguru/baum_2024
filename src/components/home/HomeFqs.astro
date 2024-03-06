@@ -1,0 +1,13 @@
+---
+import Modal from "../common/Modal";
+
+const { data } = Astro.props;
+---
+
+<section id="FAQS">
+  <div class="container_all">
+    <h2 class="pt-[100px] title">FAQS</h2>
+    <div class="border w-full opacity-70 mb-[50px]"></div>
+    <Modal client:idle data={data?.Modal_faqs} />
+  </div>
+</section>

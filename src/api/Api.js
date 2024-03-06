@@ -26,9 +26,9 @@ export const getInfoVenuesThree = async () => {
 export const getInfoVenues = async () => {
   try {
     const response = await axios.get(`${URL_STRAPI}/venues/`);
-    return { data: response.data }; 
+    return { data: response.data };
   } catch (error) {
     console.error("Error fetching data:", error);
-    return { data: null }; 
+    return { data: null };
   }
 };

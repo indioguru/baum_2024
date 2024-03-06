@@ -7,7 +7,15 @@ import { navigate } from "astro:transitions/client";
 
 const Navbar = ({ rute }) => {
   const scrollToId = useScrollToId();
-  const fields = [{ name: "Home" }, { name: "Lineup" }, { name: "Entradas" }, { name: "Cashless" }, { name: "Galerías" }, { name: "FAQS" }];
+  const fields = [
+    { name: "Home" },
+    { name: "Lineup" },
+    { name: "Entradas" },
+    { name: "Alcancías" },
+    { name: "Galerías" },
+    { name: "Cashless" },
+    { name: "FAQS" },
+  ];
 
   return (
     <navbar
@@ -24,6 +32,13 @@ const Navbar = ({ rute }) => {
             <p
               onClick={() => {
                 const menu = document.getElementById("menu");
+
+                menu.classList.add("animate__slideOutLeft");
+                // setTimeout(() => {
+                //   menu.classList.toggle("menu-toggle");
+                //   menu.classList.remove("animate__slideInLeft");
+                // }, 500);
+                // scrollToId(item?.name);
 
                 if (rute !== "/baum2024/public_html") {
                   navigate("/baum2024/public_html");
