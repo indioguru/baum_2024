@@ -5,8 +5,6 @@ import SvgClose from "../../../svgs/SvgClose";
 const ModalArtist = ({ anim, artista, onClose, onPrev, onNext }) => {
   if (!artista) return null;
 
-  console.log(artista);
-
   const { width } = useScreenResolution();
 
   return (
@@ -33,17 +31,17 @@ const ModalArtist = ({ anim, artista, onClose, onPrev, onNext }) => {
               <div className="flex items-center gap-[20px] mt-[50px]">
                 <a
                   href={artista?.Soundcloud}
-                  className={`text-[14px] text-white rounded-[16px] px-4 py-1 cursor-pointer bg-red lg:text-[28px] lg:rounded-[40px] lg:px-8 sharp hover:bg-white hover:text-red  border-red transition-colors duration-500 artist_soundcloud soundcloud_{${transformString(
+                  className={`text-[14px] text-white rounded-[16px] px-4 py-1 cursor-pointer bg-red lg:text-[28px] lg:rounded-[40px] lg:px-8 sharp hover:bg-white hover:text-red  border-red transition-colors duration-500 artist_soundcloud soundcloud_${transformString(
                     artista.Nombre
-                  )}}`}
+                  )}`}
                 >
                   SOUNDCLOUD
                 </a>
                 <a
                   href={artista?.Instagram}
-                  className={`text-[14px] text-red px-4 py-1 rounded-[16px] cursor-pointer border-red lg:text-[28px] lg:rounded-[40px] lg:px-8  sharp hover:text-white hover:bg-red transition-colors duration-500 artist_instagram instagram_{${transformString(
+                  className={`text-[14px] text-red px-4 py-1 rounded-[16px] cursor-pointer border-red lg:text-[28px] lg:rounded-[40px] lg:px-8  sharp hover:text-white hover:bg-red transition-colors duration-500 artist_instagram instagram_${transformString(
                     artista.Nombre
-                  )}}`}
+                  )}`}
                 >
                   INSTAGRAM
                 </a>
