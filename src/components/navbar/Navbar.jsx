@@ -11,10 +11,10 @@ const Navbar = ({ rute }) => {
     { name: "Home" },
     { name: "Lineup" },
     { name: "Entradas" },
-    { name: "Alcancías" },
-    { name: "Galerías" },
-    { name: "Cashless" },
-    { name: "FAQS" },
+    // { name: "Alcancías" },
+    // { name: "Galerías" },
+    // { name: "Cashless" },
+    // { name: "FAQS" },
   ];
 
   return (
@@ -40,8 +40,8 @@ const Navbar = ({ rute }) => {
                 // }, 500);
                 // scrollToId(item?.name);
 
-                if (rute !== "/baum2024/public_html") {
-                  navigate("/baum2024/public_html");
+                if (rute !== "/") {
+                  navigate("/");
                   menu.classList.add("animate__slideOutLeft");
 
                   setTimeout(() => {
