@@ -5,6 +5,6 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  base: "/baum2024/public_html",
+  base: "/",
   integrations: [tailwind(), react()],
 });

@@ -49,7 +49,7 @@ const ArtistInfo = ({ data, banner = false }) => {
       <div className="mt-[36px] lg:w-[70%] lg:mt-[100px]">
         {data.map((item, key) => (
           <p
-            onClick={() => openModal(key)}
+            // onClick={() => openModal(key)}
             key={`item_${key}`}
             className={`block  hover:bg-black hover:text-green_two cursor-pointer transition-colors inline-block duration-300 paragraph artista_detalle artista_${transformString(
               item.Nombre

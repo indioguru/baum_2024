@@ -26,14 +26,14 @@ const { data: data_venues } = await getInfoVenuesThree();
     <Homebanner data={data} />
     <HomeLineup data={data} />
     <HomeEntries data={data?.Entradas} />
-    <HomePiggyBank data={data?.Descripcion_alcancias} />
-    <HomeVenues data={data_venues} />
-    <HomeGallery data={data?.Galeria} />
-    <HomeCashless {data} />
-    <HomeFqs data={data} />
+    <!-- <HomePiggyBank data={data?.Descripcion_alcancias} /> -->
+    <!-- <HomeVenues data={data_venues} /> -->
+    <!-- <HomeGallery data={data?.Galeria} /> -->
+    <!-- <HomeCashless {data} /> -->
+    <!-- <HomeFqs data={data} /> -->
     <Footer data={data} />
     <div class="button_one lg:max-w-[400px] fixed bottom-[20px] w-[90%] right-1/2 translate-x-1/2 z-20">
-      <button class="w-full entradas entradas_naranja text-[24px]">ENTRADAS</button>
+      <button onclick="window.open('https://www.eticket.co/masinformacion.aspx?idevento=14178', '_blank')" class="w-full entradas entradas_naranja text-[24px]">ENTRADAS</button>
     </div>
   </main>
 </Layout>
