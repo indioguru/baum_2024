@@ -1,32 +1,28 @@
 ---
-import TicketPrices from "./utils/TicketPrices.astro";
-import SvgFigureGreen from "../../svgs/SvgFigureGreen.astro";
+import TicketPrices from './utils/TicketPrices.astro';
+import SvgFigureGreen from '../../svgs/SvgFigureGreen.astro';
 
 const { data } = Astro.props;
 ---
 
-<section id="Entradas" class="bg-black relative">
-  <div class="container_all">
-    <h2 class="pt-[200px] lg:pt-[400px] title">Entradas</h2>
-    <div class="border-t w-full"></div>
+<section id='Entradas' class='bg-black relative'>
+  <div class='container_all'>
+    <h2 class='pt-[200px] lg:pt-[400px] title'>Entradas</h2>
+    <div class='border-t w-full'></div>
 
-    <TicketPrices title={data[0]?.Tipo_entrada} prices={data[0]?.entrada} />
+    {data.map((item, index) => <TicketPrices key={index} title={item.Tipo_entrada} prices={item.entrada} />)}
 
-    <p class="text-white text-[10px] text-center mt-[11px] w-[80%] m-auto lg:text-[12px]">
-      Evento sujeto a cargo x servicio por el sistema eticket (IVA INCLUIDO) , los cuales están incluidos en el precio listado
-    </p>
-
-    <div class="button_two text-end pt-[50px] pb-[100px] lg:pb-[250px]">
-      <button onclick="window.open('https://www.eticket.co/masinformacion.aspx?idevento=14178', '_blank')" class="entradas entradas_internacionales2"
+    <div class='button_two text-end pt-[50px] pb-[100px] lg:pb-[250px]'>
+      <button onclick="window.open('https://www.eticket.co/masinformacion.aspx?idevento=14178', '_blank')" class='entradas entradas_internacionales2'
         >COMPRAS INTERNACIONALES</button
       >
     </div>
   </div>
-  <div class="lg:flex lg:flex-col lg:items-center w-full">
-    <div class="relative w-[120%] left-[-20px] lg:left-0 translate-y-[1px] lg:translate-y-[5px]">
+  <div class='lg:flex lg:flex-col lg:items-center w-full'>
+    <div class='relative w-[120%] left-[-20px] lg:left-0 translate-y-[1px] lg:translate-y-[5px]'>
       <SvgFigureGreen />
     </div>
-    <div class="relative w-[115%] left-[-20px] rotate-[180deg] lg:left-0 lg:w-[120%]">
+    <div class='relative w-[115%] left-[-20px] rotate-[180deg] lg:left-0 lg:w-[120%]'>
       <SvgFigureGreen />
     </div>
   </div>

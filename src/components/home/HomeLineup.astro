@@ -1,6 +1,7 @@
 ---
 import SvgFigureBlack from "../../svgs/SvgFigureBlack.astro";
 import ArtistInfo from "../../components/common/ArtistInfo.jsx";
+import LineupFilter from "../lineup/LineupFilter";
 
 const { data } = Astro.props;
 ---
@@ -11,7 +12,8 @@ const { data } = Astro.props;
 
     <div class="border-t w-full opacity-70"></div>
 
-    <ArtistInfo client:load data={data?.Artistas} />
+
+    <LineupFilter data={data} client:load />
 
     <div class="button_two mt-[22px] pb-[200px] lg:pb-[400px] cursor-default">
       <!-- <button class="cursor-default">MÁS ARTISTAS POR CONFIRMAR</button> -->
