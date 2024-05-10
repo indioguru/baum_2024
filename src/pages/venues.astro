@@ -1,32 +1,32 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import NavbarOpen from "../components/navbar/utils/NavbarOpen";
+import Layout from '../layouts/Layout.astro';
+import NavbarOpen from '../components/navbar/utils/NavbarOpen';
 
-import "animate.css";
-import "../styles/Index.scss";
+import 'animate.css';
+import '../styles/Index.scss';
 
-import VenuesModal from "../components/venues/VenuesModal";
-import { getInfoVenues } from "../api/Api";
+import VenuesModal from '../components/venues/VenuesModal';
+import { getInfoVenues } from '../api/Api';
 
 const { data } = await getInfoVenues();
 ---
 
-<Layout title="BAUM Festival | Corferias Bogotá - 24 y 25 de mayo 2024">
-  <main class="main-background relative z-10 bg-cover bg-no-repeat bg-center bg-fixed overflow-hidden">
-    <div class="container_all">
-      <div class="mt-[70px] text-[30px] lg:text-[45px] leading-8 lg:leading-none">
-        <p class="text-white sharp">Baum <br /> Festival</p>
-        <p class="pp-light text-white">2024</p>
+<Layout title='BAUM Festival | Corferias Bogotá - 24 y 25 de mayo 2024 '>
+  <main class='main-background relative z-10 bg-cover bg-no-repeat bg-center bg-fixed overflow-hidden min-h-[100vh]'>
+    <div class='container_all'>
+      <div class='mt-[70px] text-[30px] lg:text-[45px] leading-8 lg:leading-none'>
+        <p class='text-white sharp'>Baum <br /> Festival</p>
+        <p class='pp-light text-white'>2024</p>
       </div>
 
-      <h2 class="title mt-[65px]">Resident Advisor / Fabric</h2>
-      <div class="border w-full opacity-70"></div>
+      <h2 class='title mt-[65px]'>Resident Advisor / Fabric</h2>
+      <div class='border w-full opacity-70'></div>
 
       <VenuesModal client:idle data={data} />
     </div>
 
-    <div class="fixed w-[100%] flex justify-end right-1/2 translate-x-1/2 max-w-[1200px] top-[70px] z-20">
-      <div class="w-[45px] lg:w-[70px] mr-[20px] lg:mr-0 cursor-pointer">
+    <div class='fixed w-[100%] flex justify-end right-1/2 translate-x-1/2 max-w-[1200px] top-[70px] z-20'>
+      <div class='w-[45px] lg:w-[70px] mr-[20px] lg:mr-0 cursor-pointer'>
         <NavbarOpen client:idle />
       </div>
     </div>

@@ -1,40 +1,46 @@
 ---
-import SvgFigurePink from "../../svgs/SvgFigurePink.astro";
-import SvgFigureOrange from "../../svgs/SvgFigureOrange.astro";
+import SvgFigurePink from '../../svgs/SvgFigurePink.astro';
+import SvgFigureOrange from '../../svgs/SvgFigureOrange.astro';
 
 const { data } = Astro.props;
 ---
 
-<section class="relative">
-  <div class="w-[70%] rotate-[180deg] max-w-[600px]">
+<section class='relative'>
+  <!-- <div class='w-[70%] rotate-[180deg] max-w-[600px]'>
     <SvgFigurePink />
-  </div>
+  </div> -->
 
-  <div class="container_all">
-    <h2 class="title">Resident Advisor / Fabric</h2>
-    <div class="border w-full opacity-70"></div>
+  <div class='container_all pt-[50px] lg:pt-[100px]'>
+    <h2 class='title leading-[60px]'>Resident Advisor / Fabric</h2>
+    <div class='border w-full opacity-70'></div>
 
-    <p class="bg-white p-2 inline-block sharp text-[20px] mt-[60px] hover:text-green_two hover:bg-black">{data[0]?.Asociado}</p>
-    <p class="mt-[13px] text-[14px] text-white pp-book lg:w-[70%]">{data[0]?.Texto}</p>
-    <div class="button_two text-end mt-[22px]">
-      <a href={data[0]?.Link} target="_blank" rel="noopener noreferrer"> VER MÁS</a>
+    <p class='bg-white p-2 inline-block sharp text-[20px] mt-[60px] hover:text-green_two hover:bg-black'>{data[0]?.Asociado}</p>
+    <p class='mt-[13px] text-[14px] text-white pp-book lg:w-[70%]'>{data[0]?.Texto}</p>
+    <div class='button_two text-end mt-[22px]'>
+      <a href={data[0]?.Link} target='_blank' rel='noopener noreferrer'> VER MÁS</a>
     </div>
 
-    <p class="p-2 text-[16px] sharp bg-white inline-block mt-[60px] hover:text-green_two hover:bg-black">{data[1]?.Asociado}</p>
+    <a class='p-2 text-[16px] sharp bg-white inline-block mt-[60px] hover:text-green_two hover:bg-black' href={'/venues'}>{data[1]?.Asociado}</a>
     <br />
-    <p class="p-2 text-[12px] sharp bg-white inline-block mt-[14px] hover:text-green_two hover:bg-black">{data[2]?.Asociado}</p>
+    {
+      data[2]?.Asociado && (
+        <a class='p-2 text-[12px] sharp bg-white inline-block mt-[14px] hover:text-green_two hover:bg-black' href={'/venues'}>
+          {data[2]?.Asociado}
+        </a>
+      )
+    }
 
-    <div class="button_two text-end mt-[22px] pb-[50px]">
-      <a href={"/baum2024/public_html/venues"} rel="noopener noreferrer">VER TODOS</a>
+    <div class='button_two text-end mt-[22px] pb-[50px]'>
+      <a href={'/venues'} rel='noopener noreferrer'>VER TODOS</a>
     </div>
   </div>
 
-  <div class="lg:flex lg:items-center lg:justify-center">
-    <div class="w-[100%]">
+  <div class='lg:flex lg:items-center lg:justify-center'>
+    <div class='w-[100%]'>
       <SvgFigureOrange />
     </div>
 
-    <div class="hidden lg:block w-[100%]">
+    <div class='hidden lg:block w-[100%]'>
       <SvgFigureOrange />
     </div>
   </div>
