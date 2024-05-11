@@ -16,11 +16,11 @@ const { data } = Astro.props;
 
     <p class='bg-white p-2 inline-block sharp text-[20px] mt-[60px] hover:text-green_two hover:bg-black'>{data[0]?.Asociado}</p>
     <p class='mt-[13px] text-[14px] text-white pp-book lg:w-[70%]'>{data[0]?.Texto}</p>
-    <div class='button_two text-end mt-[22px]'>
-      <a href={data[0]?.Link} target='_blank' rel='noopener noreferrer'> VER MÁS</a>
+    <div class='button_two text-end mt-[22px] ver_mas_resident_fabric'>
+      <a class="ver_mas_resident_fabric ver_todos_resident_fabric" href={data[0]?.Link} target='_blank' rel='noopener noreferrer'> VER MÁS</a>
     </div>
 
-    <a class='p-2 text-[16px] sharp bg-white inline-block mt-[60px] hover:text-green_two hover:bg-black' href={'/venues'}>{data[1]?.Asociado}</a>
+    <a class='p-2 text-[16px] sharp bg-white inline-block mt-[60px] hover:text-green_two hover:bg-black ' href={'/venues'}>{data[1]?.Asociado}</a>
     <br />
     {
       data[2]?.Asociado && (
@@ -30,8 +30,8 @@ const { data } = Astro.props;
       )
     }
 
-    <div class='button_two text-end mt-[22px] pb-[50px]'>
-      <a href={'/venues'} rel='noopener noreferrer'>VER TODOS</a>
+    <div class='button_two text-end mt-[22px] pb-[50px] ver_todos_resident_fabric'>
+      <a href={'/venues'} rel='noopener noreferrer ver_todos_resident_fabric'>VER TODOS</a>
     </div>
   </div>
 <!-- 
